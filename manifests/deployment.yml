@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: cnagateway 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cnagateway 
+    spec:
+      containers:
+        - name: cnagateway 
+          image: admin11acr.azurecr.io/cnagateway
+          ports:
+          - containerPort: 8080
